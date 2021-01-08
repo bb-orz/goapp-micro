@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option go_package = "generate/examplePb";
+
+service ExampleRpcService {
+    rpc Ping(EmptyReqMsg) returns (CommonRespMsg);
+    rpc Foo(FooReqMsg) returns (FooRespMsg);
+    rpc Bar(BarReqMsg) returns (BarRespMsg);
+}
+
+message EmptyReqMsg {}
+message CommonRespMsg {
+    bool result =1;
+}
+
+message FooReqMsg {
+    int64 id = 1;
+}
+
+message FooRespMsg {
+    string result = 1;
+}
+
+message BarReqMsg {
+    int64 id = 1;
+}
+
+message BarRespMsg {
+    bool result = 1;
+}
+
+
+
+
+
+
+
+
+
+
