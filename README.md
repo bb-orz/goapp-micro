@@ -1,5 +1,5 @@
 ### 应用示例
-一个使用bb-orz/goinfras 搭建的GRpc应用脚手架
+一个使用bb-orz/goinfras 搭建的GoMicro应用脚手架
 
 
 #### 目录结构
@@ -44,7 +44,7 @@ goapp       项目
  - 数据传输对象定义
 
 #### protobuf
- - grpc 服务协议定义 
+ - rpc 服务协议定义 
  - 可根据需要选择不同的rpc框架生成
  - 建议实现的service server做成启动器的方式运行，client做成连接的调用实例
  
