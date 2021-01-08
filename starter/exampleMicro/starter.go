@@ -1,4 +1,4 @@
-package exampleGoMicroServer
+package exampleMicro
 
 import (
 	"fmt"
