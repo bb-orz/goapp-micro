@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "generate/examplePb";
 
-service ExampleRpcService {
+service ExampleMicroService {
     rpc Ping(EmptyReqMsg) returns (CommonRespMsg);
     rpc Foo(FooReqMsg) returns (FooRespMsg);
     rpc Bar(BarReqMsg) returns (BarRespMsg);

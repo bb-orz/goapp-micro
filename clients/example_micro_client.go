@@ -7,7 +7,7 @@ import (
 	"goapp/starter/exampleGoMicroServer"
 )
 
-func GetExampleGoMicroClient() (examplePb.ExampleRpcService) {
+func GetExampleMicroClient() (examplePb.ExampleMicroService) {
 	service := micro.NewService (
 		micro.Name(exampleGoMicroServer.Cfg.Name),
 		micro.Address(fmt.Sprintf("%s:%d", exampleGoMicroServer.Cfg.ServerHost, exampleGoMicroServer.Cfg.ServerPort)),
@@ -15,5 +15,5 @@ func GetExampleGoMicroClient() (examplePb.ExampleRpcService) {
 
 	service.Init()
 
-	return examplePb.NewExampleRpcService(exampleGoMicroServer.Cfg.Name, service.Client())
+	return examplePb.NewExampleMicroService(exampleGoMicroServer.Cfg.Name, service.Client())
 }

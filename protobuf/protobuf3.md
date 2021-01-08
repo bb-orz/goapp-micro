@@ -403,5 +403,5 @@ rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
 生成示例：生成适用go-micro的协议代码 
 
 ```
-protoc --proto_path= --micro_out=. --go_out=. ./example_gomicro.proto
+protoc --proto_path= --micro_out=. --go_out=. ./example_micro.proto
 ```

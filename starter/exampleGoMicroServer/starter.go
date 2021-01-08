@@ -11,7 +11,19 @@ import (
 
 
 var Cfg *Config
+type Config struct {
+	Name       string
+	ServerHost string
+	ServerPort int64
+}
 
+func DefaultConfig() *Config {
+	return &Config{
+		Name:       "ExampleGoMicro",
+		ServerHost: "127.0.0.1",
+		ServerPort: 8889,
+	}
+}
 func NewStarter() *starter {
 	s := new(starter)
 	s.cfg = &Config{}
@@ -53,7 +65,7 @@ func (s *starter) Setup(sctx *goinfras.StarterContext) {
 	s.microServer = service.Server()
 
 	// 注册服务端处理方法
-	if err = examplePb.RegisterExampleRpcServiceHandler(s.microServer, &services.ExampleRpcService{});err != nil {
+	if err = examplePb.RegisterExampleMicroServiceHandler(s.microServer, &services.ExampleMicroService{});err != nil {
 		sctx.Logger().Error(s.Name(),goinfras.StepSetup,err)
 	}
 
